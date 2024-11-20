@@ -17,11 +17,57 @@ Visual components and Python
 
 
 ## Experiment:
+![383921908-4a4fabf3-0965-4af5-8d75-af80b66ac1aa](https://github.com/user-attachments/assets/6dee8b7e-a6ee-4188-96d3-6a7da0404717)
 
+![383921979-a37a7968-3e1f-460a-9c22-6e7f22b93840](https://github.com/user-attachments/assets/19bb6129-be77-4301-919e-21e11c2b022b)
 
 ## Program
-
+```
+NAME:AISHWARYA V
+REG NO: 212223220003
+```
+```
+arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in secs): "))
+ser_time1=float(input("Enter the mean  inter service time of Lathe Machine 1 (in secs) :  "))
+ser_time2=float(input("Enter the mean  inter service time of Lathe Machine 2 (in secs) :  "))
+ser_time3=float(input("Enter the mean  inter service time of Lathe Machine 3 (in secs) :  "))
+Robot_time=float(input("Enter the Additional time taken for the Robot (in secs) :  "))
+lam=1/arr_time
+mu1=1/(ser_time1+Robot_time)
+mu2=1/(ser_time2+Robot_time)
+mu3=1/(ser_time3+Robot_time)
+print("-----------------------------------------------------------------------")
+print("Series Queues with infinite capacity- Open Jackson Network")
+print("-----------------------------------------------------------------------")
+if (lam <  mu1) and (lam <  mu2) and (lam <  mu3):
+    Ls1=lam/(mu1-lam)
+    Ls2=lam/(mu2-lam)
+    Ls3=lam/(mu3-lam)
+    Ls=Ls1+Ls2+Ls3
+    Lq1=Ls1-lam/mu1
+    Lq2=Ls2-lam/mu2
+    Lq3=Ls3-lam/mu3
+    Wq1=Lq1/lam
+    Wq2=Lq2/lam
+    Wq3=Lq3/lam
+    Ws=Ls/(3*lam)
+    print("Average number of objects in the system S1 : %0.2f "%Ls1)
+    print("Average number of objects in the system S2 : %0.2f "%Ls2)
+    print("Average number of objects in the system S3 : %0.2f "%Ls3)
+    print("Average number of objects in the overall system    : %0.2f "%Ls)
+    print("Average number of objects in the conveyor S1  :  %0.2f "%Lq1)
+    print("Average number of objects in the conveyor S2  :  %0.2f "%Lq2)
+    print("Average number of objects in the conveyor S3  :  %0.2f "%Lq3)
+    print("Average waiting time of an object in the conveyor S1 : %0.2f secs"%Wq1)
+    print("Average waiting time of an object in the conveyor S2 : %0.2f secs"%Wq2)
+    print("Average waiting time of an object in the conveyor S3 : %0.2f secs"%Wq3)
+else:
+    print("Warning! Objects Over flow will happen in the conveyor")
+print("----------------------------------------------------------------------")
+```
 
 ## Output
+![383922444-38feddd6-4370-4e2c-9115-c90a9478fb17](https://github.com/user-attachments/assets/9a46361e-cb8c-47e7-b6ca-f0c575dee394)
 
 ## Result
+The average number of material in the sysytem and in the conveyor and waiting time are successfully found.
